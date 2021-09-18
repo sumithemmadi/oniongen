@@ -20,10 +20,17 @@ go run main.go "^test" 5
 
     generate 5 onion addresses starting with "test"
 ```
-
+> The onion addresses will be stored in `Address` dictionary.
+## Random Onion Address
+```
+go run random.go
+```
+> The onion addresses will be stored in `RandomAddress` dictionary.
+<!--
 ## References
 
 - public key -> onion: https://github.com/torproject/torspec/blob/12271f0e6db00dee9600425b2de063e02f19c1ee/rend-spec-v3.txt#L2136-L2158
 - secret key expansion:
     - implementation in mkp224o: https://github.com/cathugger/mkp224o/blob/af5a7cfe122ba62e819b92c8b5a662151a284c69/ed25519/ed25519.h#L153-L161
     - possibly related: https://github.com/torproject/torspec/blob/12271f0e6db00dee9600425b2de063e02f19c1ee/rend-spec-v3.txt#L2268-L2327 ??
+-->
