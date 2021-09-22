@@ -1,4 +1,4 @@
-# oniongen-go
+# oniongen
 
 v3 .onion address vanity URL generator written in Go.
 
