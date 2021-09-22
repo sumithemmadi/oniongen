@@ -22,9 +22,14 @@ go run main.go "^test" 5
 ```
 > The onion addresses will be stored in `Address` dictionary.
 ## Random Onion Address
+
+To generate v3 .onion random address.
+
 ```
 go run random.go
 ```
+This will generate a random onion address.
+
 > The onion addresses will be stored in `RandomAddress` dictionary.
 <!--
 ## References
