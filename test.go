@@ -31,13 +31,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"regexp"
 	"runtime"
 	"strconv"
 	"strings"
 	"sync"
-//        "time"
-        "math/rand"
 	"golang.org/x/crypto/sha3"
 )
 //var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -59,11 +56,11 @@ func main() {
 }
 */
 func generate() {
-		publicKey, secretKey, err := ed25519.GenerateKey(nil)
-		checkErr(err)
-		onionAddress := encodePublicKey(publicKey)
-	  fmt.Println(onionAddress+".onion")
-	  save(onionAddress, publicKey, expandSecretKey(secretKey))
+        publicKey, secretKey, err := ed25519.GenerateKey(nil)
+	checkErr(err)
+	onionAddress := encodePublicKey(publicKey)
+	fmt.Println(onionAddress+".onion")
+	save(onionAddress, publicKey, expandSecretKey(secretKey))
 }
 
 func expandSecretKey(secretKey ed25519.PrivateKey) [64]byte {
