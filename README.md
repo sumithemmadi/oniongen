@@ -6,7 +6,7 @@ This implementation generates random ed25519 keys across all CPU cores. The ed25
 
 ## Usage
 
-```
+```go
 go run main.go <regex> <number>
 
     regex   regex pattern addresses should match, consisiting of: A-Z, 2-7
@@ -15,7 +15,7 @@ go run main.go <regex> <number>
 
 ## Example
 
-```
+```go
 go run main.go "^test" 5
 
     generate 5 onion addresses starting with "test"
@@ -25,7 +25,7 @@ go run main.go "^test" 5
 
 To generate v3 .onion random address.
 
-```
+```go
 go run random.go
 ```
 This will generate a random onion address.
