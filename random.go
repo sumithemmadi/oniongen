@@ -107,15 +107,15 @@ func encodePublicKey(publicKey ed25519.PublicKey) string {
 }
 
 func save(onionAddress string, publicKey ed25519.PublicKey, secretKey [64]byte) {
-	os.MkdirAll("RandomAddress/"+onionAddress, 0700)
+	os.MkdirAll("RandomAddresses/"+onionAddress, 0700)
 
 	secretKeyFile := append([]byte("== ed25519v1-secret: type0 ==\x00\x00\x00"), secretKey[:]...)
-	checkErr(ioutil.WriteFile("RandomAddress/"+onionAddress+"/hs_ed25519_secret_key", secretKeyFile, 0600))
+	checkErr(ioutil.WriteFile("RandomAddresses/"+onionAddress+"/hs_ed25519_secret_key", secretKeyFile, 0600))
 
 	publicKeyFile := append([]byte("== ed25519v1-public: type0 ==\x00\x00\x00"), publicKey...)
-	checkErr(ioutil.WriteFile("RandomAddress/"+onionAddress+"/hs_ed25519_public_key", publicKeyFile, 0600))
+	checkErr(ioutil.WriteFile("RandomAddresses/"+onionAddress+"/hs_ed25519_public_key", publicKeyFile, 0600))
 
-	checkErr(ioutil.WriteFile("RandomAddress/"+onionAddress+"/hostname", []byte(onionAddress+".onion"), 0600))
+	checkErr(ioutil.WriteFile("RandomAddresses/"+onionAddress+"/hostname", []byte(onionAddress+".onion"), 0600))
 }
 
 func checkErr(err error) {
