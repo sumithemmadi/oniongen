@@ -30,7 +30,7 @@ go run random.go
 ```
 This will generate a random onion addresses.
 
-> The onion addresses will be stored in `RandomAddress` dictionary.
+> The onion addresses will be stored in `RandomAddress` directory.
 <!--
 ## References
 
